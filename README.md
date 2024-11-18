@@ -1,35 +1,30 @@
-# 📧 Projeto Email
+# Email 📧
 
-O projeto **Email** é uma aplicação simples que simula o envio e o recebimento de emails. Ele foi desenvolvido para demonstrar o uso de bibliotecas de envio de emails em Python, integrando servidores SMTP para envio e IMAP para recepção de mensagens. O projeto permite que você envie emails de maneira automatizada, além de visualizar e gerenciar a caixa de entrada.
+A Django-based web application that simulates email functionality, allowing users to send, receive, and manage messages.
 
-## 🔧 Funcionalidades
+---
 
-- **Envio de Emails**: Envio de mensagens de texto ou HTML para destinatários através do servidor SMTP.
-- **Recebimento de Emails**: Utiliza IMAP para acessar a caixa de entrada e visualizar as mensagens recebidas.
-- **Autenticação Segura**: A aplicação oferece uma forma segura de autenticação utilizando variáveis de ambiente para credenciais de email.
-- **Interface Simples**: A interface de linha de comando permite ao usuário enviar e receber mensagens de forma simples e direta.
+## 📨 Features
+- **User Authentication**: Secure registration and login.
+- **Compose Emails**: Send messages to other users.
+- **Inbox Management**: View received messages and organize them.
+- **Sent Items**: Track emails you’ve sent.
+- **Archived Emails**: Archive and retrieve messages.
 
-## 🖥️ Tecnologias Utilizadas
+---
 
-- **Python**: A implementação é feita em Python, utilizando bibliotecas padrão e externas para o envio e recebimento de emails.
-- **SMTP**: O protocolo SMTP é usado para enviar emails.
-- **IMAP**: O protocolo IMAP é utilizado para acessar e ler mensagens recebidas.
-- **SSL/TLS**: Para garantir uma comunicação segura ao enviar e receber emails.
+## ⚙️ Technologies Used
+- **Django**: Backend framework for web development.
+- **HTML/CSS**: For the frontend interface.
+- **SQLite**: Default database for managing user data.
 
-## 🎯 Objetivo do Projeto
+---
 
-O objetivo principal deste projeto é fornecer uma aplicação simples, porém eficaz, para envio e recebimento de emails de forma automatizada. O projeto foi desenvolvido para quem deseja integrar o envio de mensagens de maneira prática em seus scripts ou fluxos de trabalho.
-
-### Características:
-
-- **Envio Automático**: Envie emails diretamente de scripts Python, facilitando o envio automatizado de relatórios ou alertas.
-- **Leitura de Emails**: Acesse e visualize a caixa de entrada com facilidade usando o protocolo IMAP.
-- **Segurança**: Credenciais são armazenadas de forma segura, protegendo as informações sensíveis.
-
-## ⚙️ Como Rodar o Projeto
-
-Para rodar o projeto e enviar ou receber emails, siga os passos abaixo:
-
-1. Clone o repositório:
+## 🚀 How to Run
+1. Clone the repository:
    ```bash
    git clone https://github.com/larissadcew/Email.git
+   python manage.py makemigrations
+   python manage.py migrate
+   python manage.py runserver
+
