@@ -83,12 +83,16 @@ This project is an excellent example of:
 
 ---
 
-## 🌟 Why Use This Project?  
+## 🌟 who to run?  
 
-- **Educational**: Learn how to build a responsive, full-stack web application.  
-- **Practical**: Adapt the project to create a personalized email client or integrate it into larger systems.  
-- **Scalable**: Add advanced features like search functionality, email threading, or integration with real SMTP servers.  
-
+```bash
+ptyhon manage.py runserver
+```
 ---  
+
+# demonstração:
+
+![image](image/image.png)
+
 
 Feel free to explore and expand this project. Happy coding! 🚀  
