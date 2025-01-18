@@ -1,87 +1,81 @@
-# 📧 Email - Web-Based Email Client  
+# 📧 Email - Cliente de Email Baseado na Web 
 
-The **Email** project is a web application that replicates the core functionality of an email client. Built using **Django** and **JavaScript**, it enables users to send, receive, and manage emails through an interactive and responsive interface.  
+O projeto Email é uma aplicação web que simula as funcionalidades básicas de um cliente de email. Desenvolvido com Django e JavaScript, permite que os usuários enviem, recebam e gerenciem emails através de uma interface interativa e responsiva.
 
----
-
-## 🔍 What Does This Project Do?  
-
-This application provides the following key features:  
-- **Inbox Management**: View all received emails, including read/unread statuses. 📨  
-- **Sent Mail Tracking**: Access emails sent by the user. ✉️  
-- **Archive Functionality**: Archive and unarchive emails to manage clutter. 📂  
-- **Email Composition**: Create and send emails with ease. ✍️  
-- **Dynamic Updates**: Seamless interaction powered by JavaScript. ⚡  
+![image](image/image.png)
 
 ---
 
-## 🛠️ Technologies Used  
+## 🔍 O Que Este Projeto Faz?
 
-### 1. **Django Framework**  
-- **Back-End**: Implements the logic for email storage, sending, and user authentication.  
-- **Django REST Framework**: Provides APIs for email management.  
+Esta aplicação oferece as seguintes funcionalidades principais:
+
+Gerenciamento de Caixa de Entrada: Visualize todos os emails recebidos, com status de lido/não lido. 📨
+Rastreamento de Enviados: Acesse os emails enviados pelo usuário. ✉️
+Funcionalidade de Arquivamento: Arquive e desarquive emails para manter a caixa de entrada organizada. 📂
+Composição de Email: Crie e envie emails com facilidade. ✍️
+Atualizações Dinâmicas: Interações suaves graças ao JavaScript. ⚡
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### 1. **Framework Django**  
+- **Back-End**: Gerencia o armazenamento de emails, envio e autenticação de usuários.  
+- **Django REST Framework**: Fornece APIs para gerenciamento de emails.  
 
 ### 2. **JavaScript**  
-- **Fetch API**: Handles asynchronous requests for seamless updates.  
-- **Dynamic Rendering**: Renders emails and updates UI without full-page reloads.  
+- **Fetch API**: Lida com requisições assíncronas para atualizações contínuas.  
+- **Dynamic Rendering**: Exibe emails e atualiza a interface sem recarregar a página. 
 
 ### 3. **HTML and CSS**  
-- **HTML**: Structures the pages for inbox, sent mail, archives, and composition.  
-- **CSS**: Styles the interface for a clean and user-friendly experience.  
+- **HTML**: Estrutura as páginas de caixa de entrada, enviados, arquivados e composição.  
+- **CSS**: Estiliza a interface para uma aparência limpa e amigável. 
 
 ### 4. **SQLite**  
-- Database for storing user accounts, email data, and archive states.  
+- Banco de dados para armazenar contas de usuários, dados de emails e status de arquivamento.
 
 ---
 
 ## 🔧 How It Works  
 
-### 1. User Interface  
-- Users interact with four primary views:  
-  - **Inbox**: Displays received emails, showing sender, subject, and read status.  
-  - **Sent**: Lists all emails sent by the user.  
-  - **Archive**: Allows users to retrieve archived emails.  
-  - **Compose**: Provides a form for creating and sending new emails.  
+### 1. Interface do Usuário  
+- Os usuários interagem com quatro principais visualizações: 
+  - **Inbox**: Mostra os emails recebidos, exibindo o remetente, assunto e status de leitura.
+  - **Sent**: Lista todos os emails enviados pelo usuário.
+  - **Archive**: Permite aos usuários acessar emails arquivados.  
+  - **Compose**:  Fornece um formulário para criar e enviar novos emails.  
 
-### 2. Email Composition  
-- Users specify recipients, subject, and body content.  
-- Emails are sent and saved to the database for later retrieval.  
+### 2. Composição de Email
+- Os usuários especificam destinatários, assunto e conteúdo da mensagem.  
+- Os emails são enviados e salvos no banco de dados para acesso futuro. 
 
-### 3. Inbox Functionality  
-- Emails are fetched dynamically using the **Fetch API**.  
-- Read/unread status is toggled directly in the interface.  
+### 3. Funcionalidade da Caixa de Entrada
+- Os emails são carregados de forma dinâmica utilizando a Fetch API.  
+- O status de lido/não lido pode ser alternado diretamente na interface.  
 
-### 4. Archiving  
-- Emails can be archived or unarchived with a single click.  
-- Archive status is updated in real-time via API calls.  
+### 4. Arquivamento  
+- Emails podem ser arquivados ou desarquivados com um único clique.  
+- O status de arquivamento é atualizado em tempo real através de chamadas à API.  
 
-### 5. API Endpoints  
+### 5. Endpoints da API 
 The application uses Django APIs to handle:  
-- **Fetching Emails**: Retrieve email data for inbox, sent, or archive views.  
-- **Sending Emails**: Save new emails to the database and send them to recipients.  
-- **Updating Status**: Mark emails as read/unread or archived/unarchived.  
+- **Fetching Emails**: Recuperar dados de emails para visualizações de caixa de entrada, enviados ou arquivados.  
+- **Sending Emails**: Salvar novos emails no banco de dados e enviá-los aos destinatários.  
+- **Updating Status**: Salvar novos emails no banco de dados e enviá-los aos destinatários.  
 
 ---
 
-## 📊 Database Models  
+## 📊 Modelos de Banco de Dados
 
 ### 1. **User**  
-- Utilizes Django's built-in authentication system.  
+- Utiliza o sistema de autenticação embutido do Django. 
 
 ### 2. **Email**  
-- **Fields**: `sender`, `recipients`, `subject`, `body`, `timestamp`, `read`, `archived`.  
-- **Relationships**: Links to users for sender and recipient information.  
+- **Campos**: `sender`, `recipients`, `subject`, `body`, `timestamp`, `read`, `archived`.  
+- **Relacionamentos**: Relaciona-se com usuários para informações de remetente e destinatário.  
 
 ---
 
-## 🎯 Applications  
-
-This project is an excellent example of:  
-- **Web Application Development**: Combining Django and JavaScript for dynamic, feature-rich applications.  
-- **API Integration**: Utilizing RESTful APIs for seamless data interactions.  
-- **Email Management**: Understanding how email systems are structured and function.  
-
----
 
 ## 🌟 who to run?  
 
@@ -93,6 +87,5 @@ ptyhon manage.py runserver
 # demonstração:
 
 ![image](image/image.png)
-
 
 Feel free to explore and expand this project. Happy coding! 🚀  
