@@ -4,18 +4,17 @@ O projeto Email é uma aplicação web que simula as funcionalidades básicas de
 
 ![image](image/image.png)
 
----
 
 ## 🔍 O Que Este Projeto Faz?
 
-Esta aplicação oferece as seguintes funcionalidades principais:
+### Esta aplicação oferece as seguintes funcionalidades principais:
 
-Gerenciamento de Caixa de Entrada: Visualize todos os emails recebidos, com status de lido/não lido. 📨
-Rastreamento de Enviados: Acesse os emails enviados pelo usuário. ✉️
-Funcionalidade de Arquivamento: Arquive e desarquive emails para manter a caixa de entrada organizada. 📂
-Composição de Email: Crie e envie emails com facilidade. ✍️
-Atualizações Dinâmicas: Interações suaves graças ao JavaScript. ⚡
----
+#### Gerenciamento de Caixa de Entrada: Visualize todos os emails recebidos, com status de lido/não lido. 📨
+#### Rastreamento de Enviados: Acesse os emails enviados pelo usuário. ✉️
+#### Funcionalidade de Arquivamento: Arquive e desarquive emails para manter a caixa de entrada organizada. 📂
+#### Composição de Email: Crie e envie emails com facilidade. ✍️
+#### Atualizações Dinâmicas: Interações suaves graças ao JavaScript. ⚡
+
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -36,7 +35,6 @@ Atualizações Dinâmicas: Interações suaves graças ao JavaScript. ⚡
 
 ---
 
-## 🔧 How It Works  
 
 ### 1. Interface do Usuário  
 - Os usuários interagem com quatro principais visualizações: 
@@ -77,15 +75,10 @@ The application uses Django APIs to handle:
 ---
 
 
-## 🌟 who to run?  
+## 🌟 Como executar?
 
 ```bash
 ptyhon manage.py runserver
 ```
 ---  
 
-# demonstração:
-
-![image](image/image.png)
-
-Feel free to explore and expand this project. Happy coding! 🚀  
