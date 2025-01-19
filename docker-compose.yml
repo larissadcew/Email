@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    db:
+        image: postgrees
+    web:
+        build: .
+        volumes:
+            - .:/usr/src/app
+        posts:
+            - "8000:8000"
+
+  
