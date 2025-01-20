@@ -1,15 +1,12 @@
-FROM python:3.8-slim-buster
+FROM python:3
 
-WORKDIR /app
+ENV PYTHONUNBUFFERED 1
+
+WORKDIR /code
 
 COPY requirements.txt .
-
-RUN apt-get update && apt-get install -y git && apt-get clean
-
 RUN pip3 install -r requirements.txt
 
-COPY . .
+COPY . ./
 
-EXPOSE 8000
-
-CMD ["python", "manage.py", "runserver"]
+CMD ["python3", "manage.py", "runserver"]
