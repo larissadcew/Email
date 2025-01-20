@@ -82,7 +82,7 @@ python manage.py test
 ```
 ´´´bash
 # Instalar dependências
-```bash
+```
 pip install -r requirements.txt
 ```
 # Fazer migrações:
