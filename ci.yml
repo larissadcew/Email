@@ -1,5 +1,7 @@
-name: Django CI
+stages:
+  - test
 
+<<<<<<< HEAD
 # Executa o workflow em push ou pull request para a branch main
 on:
   push:
@@ -73,3 +75,9 @@ jobs:
     - name: Executar Testes Selenium
       run: |
         python manage.py test core.tests.test_selenium  # Ajuste conforme o caminho dos seus testes
+=======
+test_job:
+  stage: test
+  script:
+    - echo "Pipeline está funcionando!"
+>>>>>>> 44c8f21 ( verificaão do ci/cd)
