@@ -1,10 +1,15 @@
-FROM python:3.9-slim
+FROM python:3.8-slim-buster
 
-WORKDIR /code
+WORKDIR /app
 
-COPY requirements.txt /code/
-RUN pip install -r requirements.txt
+COPY requirements.txt .
 
-COPY . /code/
+RUN apt-get update && apt-get install -y git && apt-get clean
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "manage.py", "runserver"]

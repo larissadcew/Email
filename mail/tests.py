@@ -7,7 +7,6 @@ from django.utils import timezone
 
 User = get_user_model()
 
-
 class UserModelTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(
