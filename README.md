@@ -4,7 +4,6 @@ O projeto Email é uma aplicação web que simula as funcionalidades básicas de
 
 ![image](image/image.png)
 
-
 ## 🔍 O Que Este Projeto Faz?
 
 ### Esta aplicação oferece as seguintes funcionalidades principais:
@@ -14,7 +13,6 @@ O projeto Email é uma aplicação web que simula as funcionalidades básicas de
 #### Funcionalidade de Arquivamento: Arquive e desarquive emails para manter a caixa de entrada organizada. 📂
 #### Composição de Email: Crie e envie emails com facilidade. ✍️
 #### Atualizações Dinâmicas: Interações suaves graças ao JavaScript. ⚡
-
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -34,7 +32,6 @@ O projeto Email é uma aplicação web que simula as funcionalidades básicas de
 - Banco de dados para armazenar contas de usuários, dados de emails e status de arquivamento.
 
 ---
-
 
 ### 1. Interface do Usuário  
 - Os usuários interagem com quatro principais visualizações: 
@@ -56,10 +53,10 @@ O projeto Email é uma aplicação web que simula as funcionalidades básicas de
 - O status de arquivamento é atualizado em tempo real através de chamadas à API.  
 
 ### 5. Endpoints da API 
-The application uses Django APIs to handle:  
+A aplicação usa APIs do Django para lidar com:  
 - **Fetching Emails**: Recuperar dados de emails para visualizações de caixa de entrada, enviados ou arquivados.  
 - **Sending Emails**: Salvar novos emails no banco de dados e enviá-los aos destinatários.  
-- **Updating Status**: Salvar novos emails no banco de dados e enviá-los aos destinatários.  
+- **Updating Status**: Atualizar o status dos emails no banco de dados.  
 
 ---
 
@@ -74,11 +71,27 @@ The application uses Django APIs to handle:
 
 ---
 
-
-## 🌟 Como executar?
+# Como executar docker:
 
 ```bash
-ptyhon manage.py runserver
+docker-compose up --build
 ```
----  
+# Executar testes de banco de dados:
+```bash
+python manage.py test
+```
+´´´bash
+# Instalar dependências
+```bash
+pip install -r requirements.txt
+```
+# Fazer migrações:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+# Executar o servidor
+```bash
+python manage.py runserver
+```
 
