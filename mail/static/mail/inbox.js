@@ -1,27 +1,31 @@
+// Aguarda o carregamento completo do DOM antes de executar o código
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Use buttons to toggle between views
+  // Usa botões para alternar entre as visualizações
   document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
   document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
   document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
   document.querySelector('#compose').addEventListener('click', compose_email);
 
-  // se o email for enviado 
+  // Se o email for enviado, chama a função Sending_mail
   document.querySelector('#compose-form').addEventListener('submit', Sending_mail);
 
-
-  // By default, load the inbox
+  // Por padrão, carrega a caixa de entrada
   load_mailbox('inbox');
 });
 
+
+// Função para limpar a visualização do corpo do email
 function clear_body(){
 
-  // esse sao os padroes (ja tem)
+  // Esconde as visualizações de emails e de composição
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'none';
 
 }
-function entry(recipients,recipients,subject,timestamp){
+
+// Função para exibir o formulário de composição de email com dados preenchidos
+function entry(recipients, subject, timestamp){
 
   // Exibir o formulário de composição de e-mail
   document.querySelector('#compose-view').style.display = 'block';
@@ -32,16 +36,15 @@ function entry(recipients,recipients,subject,timestamp){
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 
-
-  document.querySelector('#compose-form').value = recipients;
+  // Preencher os campos do formulário com os dados fornecidos
   document.querySelector('#compose-recipients').value = recipients;
   document.querySelector('#compose-subject').value = subject;
   document.querySelector('#compose-body').value = timestamp;
 
+}
 
- 
-};
 
+// Função para arquivar um email
 function archived(id){
 
   fetch(`/emails/${id}`, {
@@ -51,9 +54,11 @@ function archived(id){
     })
   })
 
+  // Limpa a visualização do corpo do email
   clear_body();
 }
 
+// Função para desarquivar um email
 function unarchiveEmail(id){
 
   fetch(`/emails/${id}`, {
@@ -63,25 +68,27 @@ function unarchiveEmail(id){
     })
   })  
 
+  // Limpa a visualização do corpo do email
   clear_body();
 
 }
 
+// Função para visualizar um email
 function view_email(id){
   
-  // clear all page
+  // Limpa toda a página
   clear_body();
 
   fetch(`/emails/${id}`)
   .then(response => response.json())
   .then(email => {
-      // Print email
+      // Imprime o email no console
       console.log(email);
 
-      // create new div to display mail
+      // Cria um novo div para exibir o email
       displaydiv = document.createElement('div');
 
-      // read the email
+      // Marca o email como lido
       fetch(`/emails/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -91,9 +98,8 @@ function view_email(id){
 
       displaydiv.style.margin = '2px';
 
-    const isArchived  = email.archived;
-
-    const isArchivedLabel = isArchived ? 'Unarchive': 'Archive';
+      const isArchived  = email.archived;
+      const isArchivedLabel = isArchived ? 'Unarchive' : 'Archive';
 
       displaydiv.innerHTML = `
       <p>From: ${email.sender}</p>
@@ -105,27 +111,27 @@ function view_email(id){
       </br>
       <hr>
       <p>Timestamp: ${email.body}</p>
-
       `
-    document.querySelector('#emails-view').innerHTML = '';
-    document.querySelector('#emails-view').append(displaydiv);
-    document.querySelector('#emails-view').style.display = 'block';
 
-    
-      // Adicionar evento de clique ao botão #entry
-    document.querySelector('#entry').addEventListener('click', () => {
-        // Passando os parâmetros para a função entry
+      // Adiciona o div criado à visualização de emails
+      document.querySelector('#emails-view').innerHTML = '';
+      document.querySelector('#emails-view').append(displaydiv);
+      document.querySelector('#emails-view').style.display = 'block';
+
+      // Adiciona evento de clique ao botão #entry
+      document.querySelector('#entry').addEventListener('click', () => {
+        // Passa os parâmetros para a função entry
         entry(email.recipients, email.sender, email.subject, email.timestamp);
       });
 
-    document.querySelector('#Archived').addEventListener('click',() =>{
-
-      if(email.archived){
-        unarchiveEmail(email.id);
-      }else{
-        archived(email.id);
-      }
-    });
+      // Adiciona evento de clique ao botão #Archived
+      document.querySelector('#Archived').addEventListener('click', () => {
+        if(email.archived){
+          unarchiveEmail(email.id);
+        } else {
+          archived(email.id);
+        }
+      });
   });
 }
 
@@ -179,41 +185,44 @@ function get_mail(mailbox){
 
 }
 
+// Função para exibir a visualização de composição de email e esconder outras visualizações
 function compose_email() {
 
-  // Show compose view and hide other views
+  // Mostrar a visualização de composição e esconder outras visualizações
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
 
-  // Clear out composition fields
+  // Limpar os campos de composição
   document.querySelector('#compose-recipients').value = '';
   document.querySelector('#compose-subject').value = '';
   document.querySelector('#compose-body').value = '';
 }
 
+// Função para carregar a caixa de correio
 function load_mailbox(mailbox) {
   
-  // Show the mailbox and hide other views
+  // Mostrar a caixa de correio e esconder outras visualizações
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
 
-  // Show the mailbox name
+  // Mostrar o nome da caixa de correio
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 
-  // aqui temos acesso a todos os mailbox
+  // Aqui temos acesso a todos os mailbox
   get_mail(mailbox);
-
 }
 
+// Função para enviar email
 function Sending_mail(event){
 
   event.preventDefault();
 
-  // pegando os valores
+  // Pegando os valores dos campos de composição
   recipients = document.querySelector('#compose-recipients').value;
   subject = document.querySelector('#compose-subject').value;
   body = document.querySelector('#compose-body').value;
 
+  // Enviando o email
   fetch('/emails', {
     method: 'POST',
     body: JSON.stringify({
@@ -224,11 +233,10 @@ function Sending_mail(event){
   })
   .then(response => response.json())
   .then(result => {
-      // Print result
+      // Imprimir o resultado
       console.log(result);
   });
 
-  // By default, load the inbox
+  // Por padrão, carregar a caixa de entrada
   load_mailbox('inbox');
-
 }
