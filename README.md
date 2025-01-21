@@ -71,6 +71,10 @@ A aplicação usa APIs do Django para lidar com:
 
 ---
 
+# Executar testes:
+```bash
+python manage.py test
+```
 
 # Instalar dependências
 ```
