@@ -71,16 +71,7 @@ A aplicação usa APIs do Django para lidar com:
 
 ---
 
-# Como executar docker
 
-```bash
-docker-compose up --build
-```
-# Executar testes de banco de dados
-```bash
-python manage.py test
-```
-´´´bash
 # Instalar dependências
 ```
 pip install -r requirements.txt
