@@ -1,5 +1,7 @@
 # 📧 Email - Cliente de Email Baseado na Web
 
+![ver demonstração ao vivo](https://www.youtube.com/watch?v=wC25I3LW3w8)
+
 O projeto Email é uma aplicação web que simula as funcionalidades básicas de um cliente de email. Desenvolvido com Django e JavaScript, permite que os usuários enviem, recebam e gerenciem emails através de uma interface interativa e responsiva. O Django gerencia o banco de dados e a lógica do servidor, enquanto o JavaScript manipula a interface do usuário e as requisições assíncronas para o servidor.
 
 ![image](image/image.png)
